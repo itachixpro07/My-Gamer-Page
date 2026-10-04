@@ -140,3 +140,16 @@ window.addEventListener('load', () => {
   setInterval(spawnEmber, 400);
   setTimeout(spawnCrow, 2000);
 });
+// Disable right click context menu
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', (e) => {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+    (e.ctrlKey && e.key === 'u')
+  ) {
+    e.preventDefault();
+  }
+});
